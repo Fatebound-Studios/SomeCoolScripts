@@ -515,11 +515,13 @@ public class DebugPanel : MonoBehaviour
 
         // Base Command for copying
 
-        commands["ping"] = args =>
+        commands["write"] = args =>
         {
-            return "pong";
+            if (args.Length == 0) return "Usage: write <text>";
+
+            return args[0];
         };
-        
+
     }
 
     // Public API: allow other scripts to register commands
